@@ -1,0 +1,35 @@
+{
+  "name": "create-html",
+  "version": "1.0.0",
+  "description": "create an html file with one function call",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "from2-string": "^1.1.0",
+    "hyperstream": "^1.2.2",
+    "markdown-stream": "^1.0.1",
+    "standard": "^7.1.2",
+    "tap-spec": "^4.1.1",
+    "tape": "^4.5.1"
+  },
+  "scripts": {
+    "lint": "standard",
+    "test": "npm run lint && node tests/index.js | tap-spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sethvincent/create-html.git"
+  },
+  "keywords": [
+    "html",
+    "static",
+    "sites",
+    "index.html"
+  ],
+  "author": "sethvincent",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sethvincent/create-html/issues"
+  },
+  "homepage": "https://github.com/sethvincent/create-html#readme"
+}
