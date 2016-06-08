@@ -1,7 +1,7 @@
 {
   "name": "create-html",
-  "version": "1.1.0",
-  "description": "create an html file with one function call",
+  "version": "1.1.1",
+  "description": "create the content of an html file with one function call",
   "main": "index.js",
   "bin": {
     "create-html": "cli.js"

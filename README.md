@@ -1,6 +1,6 @@
 # create-html
 
-Create an html file with one function call.
+Create the content of an html file with one function call.
 
 ## Install
 
@@ -42,6 +42,21 @@ var html = createHTML({
   head: '<meta name="description" content="example"',
   body: '<p>example</p>',
   favicon: 'favicon.png'
+})
+```
+
+Create a file with the html contents using the fs module:
+
+```js
+var fs = require('fs')
+var createHTML = require('create-html')
+
+var html = createHTML({
+  title: 'example'
+})
+
+fs.writeFile('index.html', html, function (err) {
+  if (err) console.log(err)
 })
 ```
 
