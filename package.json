@@ -3,7 +3,13 @@
   "version": "1.0.0",
   "description": "create an html file with one function call",
   "main": "index.js",
-  "dependencies": {},
+  "bin": {
+    "create-html": "cli.js"
+  },
+  "dependencies": {
+    "exit": "^0.1.2",
+    "minimist": "^1.2.0"
+  },
   "devDependencies": {
     "from2-string": "^1.1.0",
     "hyperstream": "^1.2.2",

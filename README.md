@@ -2,6 +2,12 @@
 
 Create an html file with one function call.
 
+## Install
+
+```
+npm install --save create-html
+```
+
 ## Usage
 
 ### `createHTML(options)`
@@ -73,11 +79,38 @@ var stream = fromString(html)
 stream.pipe(hs).pipe(process.stdout)
 ```
 
-## Install
+## CLI
+
+This module comes with a simple command-line tool for creating html files.
+
+Install it globally with `npm i -g create-html`
+
+### Usage:
 
 ```
-npm install --save create-html
+Usage:
+  create-html [options]
+
+Options:
+  * --title, -t        Page title
+  * --script, -s       JavaScript filename, optional
+  * --css, -c          CSS filename, optional
+  * --favicon, -f      Site favicon
+  * --lang, -l         Language of content
+  * --head, -h         Content to insert into <head> tag
+  * --body, -b         Content to insert into <body> tag
+  * --output, -o       File name. optional. default: index.html
+  * --help, -h         Show this help message
 ```
+
+### Example:
+
+```
+create-html -title "an example html file"
+```
+
+### See also
+- [simple-html-index](https://github.com/mattdesl/simple-html-index)
 
 ## License
 [MIT](LICENSE.md)
