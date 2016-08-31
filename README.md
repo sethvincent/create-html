@@ -39,7 +39,7 @@ var html = createHTML({
   script: 'example.js',
   css: 'example.css',
   lang: 'en',
-  head: '<meta name="description" content="example"',
+  head: '<meta name="description" content="example">',
   body: '<p>example</p>',
   favicon: 'favicon.png'
 })
