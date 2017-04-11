@@ -17,6 +17,7 @@ npm install --save create-html
 - `script`
 - `css`
 - `lang`
+- `dir`
 - `head`
 - `body`
 - `favicon`
@@ -39,6 +40,7 @@ var html = createHTML({
   script: 'example.js',
   css: 'example.css',
   lang: 'en',
+  dir: 'rtl',
   head: '<meta name="description" content="example">',
   body: '<p>example</p>',
   favicon: 'favicon.png'
@@ -112,6 +114,7 @@ Options:
   * --css, -c          CSS filename, optional
   * --favicon, -f      Site favicon
   * --lang, -l         Language of content
+  * --dir, -d          Direction of content
   * --head, -h         Content to insert into <head> tag
   * --body, -b         Content to insert into <body> tag
   * --output, -o       File name. optional. default: index.html
