@@ -4,11 +4,12 @@ module.exports = function (opts) {
   var favicon = opts.favicon ? `<link rel="icon" href="${opts.favicon}">` : ''
   var css = opts.css ? `<link rel="stylesheet" href="${opts.css}">` : ''
   var lang = opts.lang || 'en'
+  var dir = opts.dir || 'ltr'
   var head = opts.head || ''
   var body = opts.body || ''
 
   return `<!doctype html>
-<html lang="${lang}">
+<html lang="${lang}" dir="${dir}">
 <head>
 ${title}
 <meta charset="utf-8">

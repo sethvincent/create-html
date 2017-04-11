@@ -10,6 +10,7 @@ var argv = parseArgs(process.argv.slice(2), {
     t: 'title',
     l: 'lang',
     b: 'body',
+    d: 'dir',
     h: 'head',
     f: 'favicon',
     c: 'css',
@@ -32,6 +33,7 @@ Options:
   * --css, -c          CSS filename, optional
   * --favicon, -f      Site favicon
   * --lang, -l         Language of content
+  * --dir, -d          Direction of content
   * --head, -h         Content to insert into <head> tag
   * --body, -b         Content to insert into <body> tag
   * --output, -o       File name. optional. default: index.html
