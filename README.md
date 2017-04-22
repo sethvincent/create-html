@@ -109,22 +109,22 @@ Usage:
   create-html [options]
 
 Options:
-  * --title, -t        Page title
-  * --script, -s       JavaScript filename, optional
-  * --css, -c          CSS filename, optional
-  * --favicon, -f      Site favicon
-  * --lang, -l         Language of content
-  * --dir, -d          Direction of content
-  * --head, -h         Content to insert into <head> tag
-  * --body, -b         Content to insert into <body> tag
-  * --output, -o       File name. optional. default: index.html
-  * --help, -h         Show this help message
+  --title, -t        Page title
+  --script, -s       JavaScript filename, optional
+  --css, -c          CSS filename, optional
+  --favicon, -f      Site favicon
+  --lang, -l         Language of content
+  --dir, -d          Direction of content
+  --head, -H         Content to insert into <head> tag
+  --body, -b         Content to insert into <body> tag
+  --output, -o       File name. optional. default: index.html
+  --help, -h         Show this help message
 ```
 
 ### Example:
 
 ```
-create-html -title "an example html file"
+create-html --title "an example html file"
 ```
 
 ### See also
