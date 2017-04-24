@@ -94,3 +94,17 @@ test('script', function (t) {
     t.end()
   })
 })
+
+test('async script', function (t) {
+  var html = createHTML({
+    title: 'example',
+    script: 'example.js',
+    scriptAsync: true
+  })
+
+  fs.readFile(path.join(__dirname, '/fixtures/async.html'), 'utf8', function (err, file) {
+    t.notOk(err)
+    t.equal(html, file)
+    t.end()
+  })
+})

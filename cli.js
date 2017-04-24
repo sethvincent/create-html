@@ -15,6 +15,7 @@ var argv = parseArgs(process.argv.slice(2), {
     f: 'favicon',
     c: 'css',
     s: 'script',
+    a: 'script-async',
     o: 'output',
     h: 'help'
   },
@@ -30,6 +31,7 @@ Usage:
 Options:
   --title, -t        Page title
   --script, -s       JavaScript filename, optional
+  --script-async, -a Add async attribute to script tag
   --css, -c          CSS filename, optional
   --favicon, -f      Site favicon
   --lang, -l         Language of content
@@ -50,7 +52,7 @@ fs.writeFile(argv.output, createHTML(argv), function (err) {
     console.log(`
       Error:
         ${err}
-      
+
       Usage:
         ${usage}
     `)
