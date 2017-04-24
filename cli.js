@@ -15,10 +15,13 @@ var argv = parseArgs(process.argv.slice(2), {
     f: 'favicon',
     c: 'css',
     s: 'script',
-    a: 'script-async',
+    a: ['script-async', 'scriptAsync'],
     o: 'output',
     h: 'help'
   },
+  boolean: [
+    'script-async'
+  ],
   default: {
     output: 'index.html'
   }
