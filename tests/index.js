@@ -1,8 +1,6 @@
 var fs = require('fs')
 var path = require('path')
 var test = require('tape')
-var fromString = require('from2-string')
-var hyperstream = require('hyperstream')
 var createHTML = require('../index')
 
 test('title', function (t) {
