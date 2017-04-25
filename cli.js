@@ -45,7 +45,6 @@ if (argv.help) {
   exit()
 }
 
-console.log('argv:', argv)
 if (argv.output && argv.output.length) {
   fs.writeFile(argv.output, createHTML(argv), function (err) {
     if (err) {
