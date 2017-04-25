@@ -18,9 +18,9 @@ var argv = parseArgs(process.argv.slice(2), {
     o: 'output',
     h: 'help'
   },
-  default: {
-    output: 'index.html'
-  }
+  string: [
+    'output'
+  ]
 })
 
 var usage = `
@@ -45,14 +45,19 @@ if (argv.help) {
   exit()
 }
 
-fs.writeFile(argv.output, createHTML(argv), function (err) {
-  if (err) {
-    console.log(`
-      Error:
-        ${err}
-      
-      Usage:
-        ${usage}
-    `)
-  }
-})
+console.log('argv:', argv)
+if (argv.output && argv.output.length) {
+  fs.writeFile(argv.output, createHTML(argv), function (err) {
+    if (err) {
+      console.log(`
+        Error:
+          ${err}
+
+        Usage:
+          ${usage}
+      `)
+    }
+  })
+} else {
+  process.stdout.write(createHTML(argv))
+}
