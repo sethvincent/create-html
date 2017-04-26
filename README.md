@@ -120,7 +120,7 @@ Options:
   --dir, -d          Direction of content
   --head, -H         Content to insert into <head> tag
   --body, -b         Content to insert into <body> tag
-  --output, -o       File name. optional. default: index.html
+  --output, -o       File name. optional. default: stdout
   --help, -h         Show this help message
 ```
 

@@ -19,12 +19,12 @@ var argv = parseArgs(process.argv.slice(2), {
     o: 'output',
     h: 'help'
   },
+  string: [
+    'output'
+  ],
   boolean: [
     'script-async'
-  ],
-  default: {
-    output: 'index.html'
-  }
+  ]
 })
 
 var usage = `
@@ -41,7 +41,7 @@ Options:
   --dir, -d          Direction of content
   --head, -H         Content to insert into <head> tag
   --body, -b         Content to insert into <body> tag
-  --output, -o       File name. optional. default: index.html
+  --output, -o       File name. optional. default: stdout
   --help, -h         Show this help message
 `
 
@@ -50,14 +50,18 @@ if (argv.help) {
   exit()
 }
 
-fs.writeFile(argv.output, createHTML(argv), function (err) {
-  if (err) {
-    console.log(`
-      Error:
-        ${err}
+if (argv.output && argv.output.length) {
+  fs.writeFile(argv.output, createHTML(argv), function (err) {
+    if (err) {
+      console.log(`
+        Error:
+          ${err}
 
-      Usage:
-        ${usage}
-    `)
-  }
-})
+        Usage:
+          ${usage}
+      `)
+    }
+  })
+} else {
+  process.stdout.write(createHTML(argv))
+}
