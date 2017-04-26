@@ -1,6 +1,6 @@
 {
   "name": "create-html",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "create the content of an html file with one function call",
   "main": "index.js",
   "bin": {
