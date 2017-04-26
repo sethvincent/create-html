@@ -15,6 +15,7 @@ npm install --save create-html
 #### `options`
 - `title`
 - `script`
+- `scriptAsync`
 - `css`
 - `lang`
 - `dir`
@@ -38,6 +39,7 @@ Example using all options:
 var html = createHTML({
   title: 'example',
   script: 'example.js',
+  scriptAsync: true,
   css: 'example.css',
   lang: 'en',
   dir: 'rtl',
@@ -111,6 +113,7 @@ Usage:
 Options:
   --title, -t        Page title
   --script, -s       JavaScript filename, optional
+  --script-async, -a Add async attribute to script tag
   --css, -c          CSS filename, optional
   --favicon, -f      Site favicon
   --lang, -l         Language of content
