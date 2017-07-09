@@ -31,6 +31,7 @@ npm install --save create-html
 - `script`
 - `scriptAsync`
 - `css`
+- `cssAsync`
 - `lang`
 - `dir`
 - `head`

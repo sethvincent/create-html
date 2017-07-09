@@ -14,6 +14,7 @@ var argv = parseArgs(process.argv.slice(2), {
     H: 'head',
     f: 'favicon',
     c: 'css',
+    C: ['css-async', 'cssAsync'],
     s: 'script',
     a: ['script-async', 'scriptAsync'],
     o: 'output',
@@ -23,7 +24,8 @@ var argv = parseArgs(process.argv.slice(2), {
     'output'
   ],
   boolean: [
-    'script-async'
+    'script-async',
+    'css-async'
   ]
 })
 
@@ -36,6 +38,7 @@ Options:
   --script, -s       JavaScript filename, optional
   --script-async, -a Add async attribute to script tag
   --css, -c          CSS filename, optional
+  --css-async, -C    Load CSS asynchronously
   --favicon, -f      Site favicon
   --lang, -l         Language of content
   --dir, -d          Direction of content
