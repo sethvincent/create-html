@@ -1,6 +1,7 @@
 module.exports = function (opts) {
   var title = opts.title ? `<title>${opts.title}</title>` : ''
   var headScript = (opts.script && opts.scriptAsync) ? `<script src="${opts.script}" async></script>` : ''
+  var headStyle = opts.style ? `<style type="text/css">${opts.style}</style>` : ''
   var bodyScript = (opts.script && !opts.scriptAsync) ? `<script src="${opts.script}"></script>` : ''
   var favicon = opts.favicon ? `<link rel="icon" href="${opts.favicon}">` : ''
   var css = opts.css
@@ -21,6 +22,7 @@ ${title}
 ${favicon}
 ${css}
 ${head}
+${headStyle}
 ${headScript}
 </head>
 <body>
