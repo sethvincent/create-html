@@ -19,8 +19,8 @@ module.exports = function (opts) {
 ${title}
 <meta charset="utf-8">
 ${favicon}
-${css}
 ${head}
+${css}
 ${headScript}
 </head>
 <body>
