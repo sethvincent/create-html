@@ -37,6 +37,7 @@ npm install --save create-html
 - `head`
 - `body`
 - `favicon`
+- `meta`
 
 ## Examples
 
@@ -60,7 +61,14 @@ var html = createHTML({
   dir: 'rtl',
   head: '<meta name="description" content="example">',
   body: '<p>example</p>',
-  favicon: 'favicon.png'
+  favicon: 'favicon.png',
+  meta: [{
+        "name": "viewport",
+        "content": "width=device-width"
+    },{
+      'name': 'description',
+      'content': 'Example description'
+    }]
 })
 ```
 

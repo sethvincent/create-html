@@ -3,6 +3,13 @@ module.exports = function (opts) {
   var headScript = (opts.script && opts.scriptAsync) ? `<script src="${opts.script}" async></script>` : ''
   var bodyScript = (opts.script && !opts.scriptAsync) ? `<script src="${opts.script}"></script>` : ''
   var favicon = opts.favicon ? `<link rel="icon" href="${opts.favicon}">` : ''
+  var meta = opts.meta ? (function (metaArr) {
+    var arr = []
+    metaArr.forEach(function (el) {
+      arr.push('<meta name="' + el.name + '" content="' + el.content + '">')
+    })
+    return arr.join('\n')
+  })(opts.meta) : ''
   var css = opts.css
     ? opts.cssAsync
       ? `<link rel="stylesheet" href="${opts.css}" media="none" onload="if(media!=='all')media='all'">`
@@ -19,6 +26,7 @@ module.exports = function (opts) {
 ${title}
 <meta charset="utf-8">
 ${favicon}
+${meta}
 ${head}
 ${css}
 ${headScript}

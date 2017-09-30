@@ -106,3 +106,22 @@ test('async script', function (t) {
     t.end()
   })
 })
+
+test('meta', function (t) {
+  var html = createHTML({
+    title: 'example',
+    'meta': [{
+      'name': 'viewport',
+      'content': 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no'
+    }, {
+      'name': 'description',
+      'content': 'Testing description meta tag'
+    }]
+  })
+
+  fs.readFile(path.join(__dirname, '/fixtures/meta.html'), 'utf8', function (err, file) {
+    t.notOk(err)
+    t.equal(html, file)
+    t.end()
+  })
+})
