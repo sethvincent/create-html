@@ -113,6 +113,18 @@ var stream = fromString(html)
 stream.pipe(hs).pipe(process.stdout)
 ```
 
+
+### Multiple CSS and Javascript Files
+
+Multiple script and stylesheets can be added by sending an array instead of a string:
+
+```js
+var html = createHTML({
+  css: ['sheet1.css', 'sheet2.css'],
+  script: ['script1.css', 'script2.css'],
+})
+```
+
 ## CLI
 
 This module comes with a simple command-line tool for creating html files.

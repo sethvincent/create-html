@@ -1,13 +1,43 @@
+function buildStylesheets (sheets, async) {
+  var output = ''
+  if (!sheets) return output
+
+  if (typeof sheets === 'string') {
+    sheets = [sheets]
+  }
+
+  sheets.forEach(function (sheet) {
+    output += !async
+      ? `<link rel="stylesheet" href="${sheet}">`
+      : `<link rel="stylesheet" href="${sheet}" media="none" onload="if(media!=='all')media='all'">`
+  })
+
+  return output
+}
+
+function buildScripts (scripts, async) {
+  var output = ''
+  if (!scripts) return output
+
+  if (typeof scripts === 'string') {
+    scripts = [scripts]
+  }
+
+  scripts.forEach(function (script) {
+    output += !async
+      ? `<script src="${script}"></script>`
+      : `<script src="${script}" async></script>`
+  })
+
+  return output
+}
+
 module.exports = function (opts) {
   var title = opts.title ? `<title>${opts.title}</title>` : ''
-  var headScript = (opts.script && opts.scriptAsync) ? `<script src="${opts.script}" async></script>` : ''
-  var bodyScript = (opts.script && !opts.scriptAsync) ? `<script src="${opts.script}"></script>` : ''
+  var headScript = (opts.script && opts.scriptAsync) ? buildScripts(opts.script, opts.scriptAsync) : ''
+  var bodyScript = (opts.script && !opts.scriptAsync) ? buildScripts(opts.script, opts.scriptAsync) : ''
   var favicon = opts.favicon ? `<link rel="icon" href="${opts.favicon}">` : ''
-  var css = opts.css
-    ? opts.cssAsync
-      ? `<link rel="stylesheet" href="${opts.css}" media="none" onload="if(media!=='all')media='all'">`
-      : `<link rel="stylesheet" href="${opts.css}">`
-    : ''
+  var css = buildStylesheets(opts.css, opts.cssAsync)
   var lang = opts.lang || 'en'
   var dir = opts.dir || 'ltr'
   var head = opts.head || ''

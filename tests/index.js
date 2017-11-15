@@ -28,6 +28,19 @@ test('css', function (t) {
   })
 })
 
+test('multiple css', function (t) {
+  var html = createHTML({
+    title: 'example',
+    css: ['example1.css', 'example2.css']
+  })
+
+  fs.readFile(path.join(__dirname, '/fixtures/css-multiple.html'), 'utf8', function (err, file) {
+    t.notOk(err)
+    t.equal(html, file)
+    t.end()
+  })
+})
+
 test('lang', function (t) {
   var html = createHTML({
     title: 'example',
@@ -93,6 +106,19 @@ test('script', function (t) {
   })
 })
 
+test('multiple script', function (t) {
+  var html = createHTML({
+    title: 'example',
+    script: ['example1.js', 'example2.js']
+  })
+
+  fs.readFile(path.join(__dirname, '/fixtures/script-multiple.html'), 'utf8', function (err, file) {
+    t.notOk(err)
+    t.equal(html, file)
+    t.end()
+  })
+})
+
 test('async script', function (t) {
   var html = createHTML({
     title: 'example',
@@ -101,6 +127,20 @@ test('async script', function (t) {
   })
 
   fs.readFile(path.join(__dirname, '/fixtures/async.html'), 'utf8', function (err, file) {
+    t.notOk(err)
+    t.equal(html, file)
+    t.end()
+  })
+})
+
+test('multiple async script', function (t) {
+  var html = createHTML({
+    title: 'example',
+    script: ['example1.js', 'example2.js'],
+    scriptAsync: true
+  })
+
+  fs.readFile(path.join(__dirname, '/fixtures/async-multiple.html'), 'utf8', function (err, file) {
     t.notOk(err)
     t.equal(html, file)
     t.end()
