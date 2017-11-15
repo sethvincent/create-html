@@ -121,7 +121,7 @@ Multiple script and stylesheets can be added by sending an array instead of a st
 ```js
 var html = createHTML({
   css: ['sheet1.css', 'sheet2.css'],
-  script: ['script1.css', 'script2.css'],
+  script: ['script1.js', 'script2.js']
 })
 ```
 
