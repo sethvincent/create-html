@@ -1,15 +1,64 @@
 {
-  "name": "create-html",
-  "version": "4.0.0",
-  "description": "create the content of an html file with one function call",
-  "main": "index.js",
+  "_args": [
+    [
+      {
+        "raw": "create-html@^4.0.0",
+        "scope": null,
+        "escapedName": "create-html",
+        "name": "create-html",
+        "rawSpec": "^4.0.0",
+        "spec": ">=4.0.0 <5.0.0",
+        "type": "range"
+      },
+      "/Users/emcniece/Code/ionic/aurora-app"
+    ]
+  ],
+  "_from": "create-html@>=4.0.0 <5.0.0",
+  "_id": "create-html@4.0.0",
+  "_inCache": true,
+  "_location": "/create-html",
+  "_nodeVersion": "6.11.1",
+  "_npmOperationalInternal": {
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/create-html-4.0.0.tgz_1504387270191_0.23340277816168964"
+  },
+  "_npmUser": {
+    "name": "sethvincent",
+    "email": "sethvincent@gmail.com"
+  },
+  "_npmVersion": "5.3.0",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "create-html@^4.0.0",
+    "scope": null,
+    "escapedName": "create-html",
+    "name": "create-html",
+    "rawSpec": "^4.0.0",
+    "spec": ">=4.0.0 <5.0.0",
+    "type": "range"
+  },
+  "_requiredBy": [
+    "#DEV:/"
+  ],
+  "_resolved": "https://npm.limbicmedia.ca/create-html/-/create-html-4.0.0.tgz",
+  "_shasum": "adaba45f4347cf08a725dfc633e4b785445e1c09",
+  "_shrinkwrap": null,
+  "_spec": "create-html@^4.0.0",
+  "_where": "/Users/emcniece/Code/ionic/aurora-app",
+  "author": {
+    "name": "sethvincent"
+  },
   "bin": {
     "create-html": "cli.js"
+  },
+  "bugs": {
+    "url": "https://github.com/sethvincent/create-html/issues"
   },
   "dependencies": {
     "exit": "^0.1.2",
     "minimist": "^1.2.0"
   },
+  "description": "create the content of an html file with one function call",
   "devDependencies": {
     "from2-string": "^1.1.0",
     "hyperstream": "^1.2.2",
@@ -18,24 +67,39 @@
     "tap-spec": "^4.1.1",
     "tape": "^4.5.1"
   },
-  "scripts": {
-    "lint": "standard",
-    "test": "npm run lint && node tests/index.js | tap-spec"
+  "directories": {},
+  "dist": {
+    "integrity": "sha512-STB2IY1nb0ho29oQsuMw/S7vcwxYYBV20T3cb1azZW2a59PsKwyIvd7DtAlyG20GZ2jtUw+T38hqky0O1fm0QQ==",
+    "shasum": "adaba45f4347cf08a725dfc633e4b785445e1c09",
+    "tarball": "https://npm.limbicmedia.ca/create-html/-/create-html-4.0.0.tgz"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/sethvincent/create-html.git"
-  },
+  "gitHead": "4bedce26e13ae644a80be0bd0684df223d8959bb",
+  "homepage": "https://github.com/sethvincent/create-html#readme",
   "keywords": [
     "html",
     "static",
     "sites",
     "index.html"
   ],
-  "author": "sethvincent",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/sethvincent/create-html/issues"
+  "main": "index.js",
+  "maintainers": [
+    {
+      "name": "sethvincent",
+      "email": "sethvincent@gmail.com"
+    }
+  ],
+  "name": "create-html",
+  "optionalDependencies": {},
+  "readme": "# create-html\n\nCreate the content of an html file with one function call.\n\n[![npm][npm-image]][npm-url]\n[![travis][travis-image]][travis-url]\n[![standard][standard-image]][standard-url]\n[![conduct][conduct]][conduct-url]\n\n[npm-image]: https://img.shields.io/npm/v/create-html.svg?style=flat-square\n[npm-url]: https://www.npmjs.com/package/create-html\n[travis-image]: https://img.shields.io/travis/sethvincent/create-html.svg?style=flat-square\n[travis-url]: https://travis-ci.org/sethvincent/create-html\n[standard-image]: https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat-square\n[standard-url]: http://npm.im/standard\n[conduct]: https://img.shields.io/badge/code%20of%20conduct-contributor%20covenant-green.svg?style=flat-square\n[conduct-url]: CONDUCT.md\n\n## Install\n\n```\nnpm install --save create-html\n```\n\n## Usage\n\n### `createHTML(options)`\n\n#### `options`\n- `title`\n- `script`\n- `scriptAsync`\n- `css`\n- `cssAsync`\n- `lang`\n- `dir`\n- `head`\n- `body`\n- `favicon`\n\n## Examples\n\nSimple example that create an html file with the title `example`:\n\n```js\nvar html = createHTML({\n  title: 'example'\n})\n```\n\nExample using all options:\n\n```js\nvar html = createHTML({\n  title: 'example',\n  script: 'example.js',\n  scriptAsync: true,\n  css: 'example.css',\n  lang: 'en',\n  dir: 'rtl',\n  head: '<meta name=\"description\" content=\"example\">',\n  body: '<p>example</p>',\n  favicon: 'favicon.png'\n})\n```\n\nCreate a file with the html contents using the fs module:\n\n```js\nvar fs = require('fs')\nvar createHTML = require('create-html')\n\nvar html = createHTML({\n  title: 'example'\n})\n\nfs.writeFile('index.html', html, function (err) {\n  if (err) console.log(err)\n})\n```\n\nCreate a stream by pairing this module with [`from2-string`](http://npmjs.com/from2-string):\n\n```js\nvar fromString = require('from2-string')\nvar createHTML = require('create-html')\n\nvar html = createHTML({\n  title: 'example'\n})\n\nvar stream = fromString(html)\nstream.pipe(process.stdout)\n```\n\nPipe content into the html that this module generates by using from2-string and [`hyperstream`](http://npmjs.com/hyperstream)\n\n```js\nvar fs = require('fs')\nvar fromString = require('from2-string')\nvar hyperstream = require('hyperstream')\nvar createHTML = require('./index')\n\nvar html = createHTML({\n  title: 'example'\n})\n\nvar hs = hyperstream({\n  'body': fs.createReadStream('some.html')\n})\n\nvar stream = fromString(html)\nstream.pipe(hs).pipe(process.stdout)\n```\n\n## CLI\n\nThis module comes with a simple command-line tool for creating html files.\n\nInstall it globally with `npm i -g create-html`\n\n### Usage:\n\n```\nUsage:\n  create-html [options]\n\nOptions:\n  --title, -t        Page title\n  --script, -s       JavaScript filename, optional\n  --script-async, -a Add async attribute to script tag\n  --css, -c          CSS filename, optional\n  --favicon, -f      Site favicon\n  --lang, -l         Language of content\n  --dir, -d          Direction of content\n  --head, -H         Content to insert into <head> tag\n  --body, -b         Content to insert into <body> tag\n  --output, -o       File name. optional. default: stdout\n  --help, -h         Show this help message\n```\n\n### Example:\n\n```\ncreate-html --title \"an example html file\"\n```\n\n### See also\n- [simple-html-index](https://github.com/mattdesl/simple-html-index)\n\n## License\n[MIT](LICENSE.md)\n",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sethvincent/create-html.git"
   },
-  "homepage": "https://github.com/sethvincent/create-html#readme"
+  "scripts": {
+    "lint": "standard",
+    "test": "npm run lint && node tests/index.js | tap-spec"
+  },
+  "version": "4.0.0"
 }
