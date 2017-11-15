@@ -8,8 +8,8 @@ function buildStylesheets (sheets, async) {
 
   sheets.forEach(function (sheet) {
     output += !async
-      ? `<link rel="stylesheet" href="${sheet}">`
-      : `<link rel="stylesheet" href="${sheet}" media="none" onload="if(media!=='all')media='all'">`
+      ? `<link rel="stylesheet" href="${sheet}">\n`
+      : `<link rel="stylesheet" href="${sheet}" media="none" onload="if(media!=='all')media='all'">\n`
   })
 
   return output
@@ -25,8 +25,8 @@ function buildScripts (scripts, async) {
 
   scripts.forEach(function (script) {
     output += !async
-      ? `<script src="${script}"></script>`
-      : `<script src="${script}" async></script>`
+      ? `<script src="${script}"></script>\n`
+      : `<script src="${script}" async></script>\n`
   })
 
   return output
